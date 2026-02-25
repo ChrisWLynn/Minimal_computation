@@ -16,3 +16,5 @@ For each time-series X, X(i,t) represents activity (1) or silence (0) for neuron
 To fit a single maximum entropy model with a specified set of inputs, use "maxEnt_neuron.m".
 
 To fit a sequence of maximum entropy models and find the optimal set of inputs, use "minimax_entropy.m". For a given output neuron, this function greedily adds inputs that minimize the model entropy until the model predicts the pairwise correlations with all neurons (within experimental models). This greedy algorithm is used to compute the "complete" models in the paper.
+
+Note: When switching between different datasets, one should update (1) the gradient descent threshold in "maxEnt_neuron.m" and (2) the numbers of inputs to sweep over in "minimax_entropy.m".
